@@ -1,0 +1,16 @@
+<%- include("header"); -%>
+<link rel="stylesheet" href="css/styles.css">
+
+    <div class="ffcontainer center">
+        <div class="fitem verify">
+            <div  class="inner-div">Verify Your Email</div>
+            <div class="inner-div">Enter the verification code we just mailed you.Check Your Email <i style="color:red;" class="fas fa-envelope"></i></div>
+        </div>
+        <h5><%=error%></h5>
+        <form action="/verify" method="post">
+            <input type="text" id="verify-text" name="verificationCode" placeholder="Enter Here">
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+<%- include("footer"); -%>
+

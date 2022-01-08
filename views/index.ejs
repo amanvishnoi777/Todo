@@ -1,0 +1,41 @@
+<%- include("header"); -%>
+  <%- include("navbar"); -%>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Including items -->
+    <div class="main-body">
+      <div class="date">
+        <h1 class="text">Hello <%= name %>.</h1>
+        <h2 class="text"><%= date %></h2>
+      </div>
+      <div class="date" style="width:90%">
+        <form action="/" method="post">
+          <div class="fcontainer">
+            <div class="fitem">
+              <ul>
+                <% Items.forEach(function(item){ %>
+                  <li class="list-item">
+                    <h4 class="fitem-text">
+                      <%=item.notes %>
+                    </h4>
+                    <!-- <button type="Submit" name="submit" value="delete" class="submit-button"><i
+                        class="fas fa-lg	 fa-trash-alt"></i></button> -->
+                    <a href="delete/<%= item.notes %>/home"><i class="fas fa-lg	fa-trash-alt"></i></a>
+                  </li>
+                  <% }) %>
+              </ul>
+            </div>
+          
+          <!-- <div class="fitem"> -->
+          <input type="text" placeholder="What's Next" name="newTask" />
+          <button type="submit" name="submit" value="add" class="submit-button"><i
+              class="fas  fa-lg fa-plus-circle"></i></button>
+          <button type="Submit" name="submit" value="clear" class="submit-button"><i
+              class="fas fa-lg	 fa-trash-alt"></i></button>
+          </div>
+          <!-- </div>  -->
+        </form>
+      </div>
+    </div>
+    </div>
+    <%- include("footer"); -%>
